@@ -13,3 +13,14 @@ $ sudo yum install gcc
 ``` bash install java http://java.com/ test
 $ sudo yum install jave
 ```
+
+
+``` cpp  install cpp http://java.com/ test
+#include<iostream>
+using namespace std;
+int main()
+{
+	cin>>a;
+	cout<<a;
+}
+```
