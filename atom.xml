@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress BlogTest]]></title>
+  <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
+  <link href="http://chenyuefeng.github.com/"/>
+  <updated>2012-07-17T00:26:34+08:00</updated>
+  <id>http://chenyuefeng.github.com/</id>
+  <author>
+    <name><![CDATA[Chen Yuefeng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TestCodeBlocks]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/13/testcodeblocks/"/>
+    <updated>2012-07-13T00:20:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/13/testcodeblocks</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git@github.com:yourname/project.git
+</span><span class='line'><span class="nb">cd </span>project
+</span><span class='line'>rake setup_github_pages
+</span><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span><span class='line'>git add .
+</span><span class='line'>git commit -am <span class="s2">&quot;   &quot;</span>
+</span><span class='line'>git push git@github.com:yourname/project.git HEAD:source
+</span><span class='line'><span class="nv">$ </span>sudo yum install gcc
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>install java </span><a href='http://java.com/'>test</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo yum install jave
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>install cpp </span><a href='http://java.com/'>test</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include&lt;iostream&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A new octopress Blog]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/12/a-new-octopress-blog/"/>
+    <updated>2012-07-12T23:52:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/12/a-new-octopress-blog</id>
+    <content type="html"><![CDATA[<h2>Test the octpress blog</h2>
+
+<h3>Test the octpress blog</h3>
+
+<h4>Test the octpress blog</h4>
+]]></content>
+  </entry>
+  
+</feed>
