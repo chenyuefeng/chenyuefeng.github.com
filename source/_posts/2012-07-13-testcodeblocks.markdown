@@ -6,7 +6,14 @@ comments: true
 categories: 
 ---
 ``` bash 
-$ sudo yum install ruby
+git clone git@github.com:yourname/project.git
+cd project
+rake setup_github_pages
+rake generate
+rake deploy
+git add .
+git commit -am "   "
+git push git@github.com:yourname/project.git HEAD:source
 $ sudo yum install gcc
 ```
 
