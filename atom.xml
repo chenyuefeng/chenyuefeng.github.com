@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-17T00:33:21+08:00</updated>
+  <updated>2012-07-17T00:39:24+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[程序员语录]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/17/cheng-xu-yuan-yu-lu/"/>
+    <updated>2012-07-17T00:36:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/17/cheng-xu-yuan-yu-lu</id>
+    <content type="html"><![CDATA[<p>设计者确定其设计已经达到了完美的标准不是不能再增加任何东西，而是不能再减少任何东西。&#8212;&#8211;Anotine de Saint-Exupery 法国作家兼飞机设计师</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[TestCodeBlocks]]></title>
