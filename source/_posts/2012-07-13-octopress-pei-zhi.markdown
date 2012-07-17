@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TestCodeBlocks"
+title: "Octopress 配置"
 date: 2012-07-13 00:20
 comments: true
 categories: 
@@ -30,6 +30,7 @@ git push git@github.com:yourname/project.git HEAD:source
 * 访问[http://uyan.cc/](http://uyan.cc "uyan")复制code
 * 将上面两个code复制到weibo.html中即可
 
+<!-- 
 ``` bash install java http://java.com/ test
 $ sudo yum install jave
 ```
@@ -44,3 +45,4 @@ int main()
 	cout<<a;
 }
 ```
+-->
