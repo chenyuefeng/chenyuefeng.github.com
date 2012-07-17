@@ -16,12 +16,14 @@ git commit -am "   "
 git push git@github.com:yourname/project.git HEAD:source
 ```
 配置comments和社交网络工具
+
 * 在_config.yml中增加一项: weibo_share: true
 * 修改source/_includes/post/sharing.html，增加
+
 ``` bash
 {%  if site.weibo_share %}
 	{% include post/weibo.html %}
-{% endif $}
+{% endif %}
 ```
 * 增加文件: source/_includes/post/weibo.html
 * 访问[http://www.jiathis.com/](http://www.jiathis.com/ "Jiathis")，复制code
