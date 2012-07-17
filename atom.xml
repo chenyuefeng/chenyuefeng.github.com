@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-17T19:28:28+08:00</updated>
+  <updated>2012-07-17T19:30:25+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -59,7 +59,7 @@
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">{</span>%  <span class="k">if </span>site.weibo_share %<span class="o">}</span>
 </span><span class='line'>  <span class="o">{</span>% include post/weibo.html %<span class="o">}</span>
-</span><span class='line'><span class="o">{</span>% endif <span class="nv">$}</span>
+</span><span class='line'><span class="o">{</span>% endif %<span class="o">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
