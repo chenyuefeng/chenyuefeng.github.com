@@ -30,6 +30,37 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -260,6 +291,29 @@
 <li>将上面两个code复制到weibo.html中即可</li>
 </ul>
 
+
+<p>$$
+\begin{align*}
+  &amp; \phi(x,y) = \phi \left(\sum<em>{i=1}<sup>n</sup> x_ie_i, \sum</em>{j=1}<sup>n</sup> y_je_j \right)
+  = \sum<em>{i=1}<sup>n</sup> \sum</em>{j=1}<sup>n</sup> x_i y_j \phi(e_i, e_j) = \
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}</p>
+
+<pre><code>  \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
+  \vdots &amp; \ddots &amp; \vdots \\
+  \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+\end{array} \right)
+</code></pre>
+
+<p>  \left( \begin{array}{c}</p>
+
+<pre><code>  y_1 \\
+  \vdots \\
+  y_n
+\end{array} \right)
+</code></pre>
+
+<p>\end{align*}
+$$</p>
 </div>
   
   
