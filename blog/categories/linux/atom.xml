@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | 滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T21:04:28+08:00</updated>
+  <updated>2012-07-20T21:37:48+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -44,6 +44,59 @@ rake install['theme name']
 rake generate
 rake deploy
 </code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 新浪微博侧边栏]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan/"/>
+    <updated>2012-07-20T20:09:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan</id>
+    <content type="html"><![CDATA[<p>首先到<a href="http://weibo.com/login.php?url=http%3A%2F%2Fweibo.com%2Ftool%2Fweiboshow">微博秀</a>获取需要嵌入的code，例如</p>
+
+<p><code>html
+&lt;iframe 
+	width="100%" 
+	height="550" 
+	class="share_self"  
+	frameborder="0" 
+	scrolling="no" 
+	src="http://widget.weibo.com/weiboshow/index.php?
+        language=&amp;width=0&amp;height=550&amp;
+        fansRow=2&amp;ptype=1&amp;speed=0&amp;
+        skin=1&amp;isTitle=1&amp;noborder=1&amp;
+	isWeibo=1&amp;isFans=1&amp;uid=000000&amp;verifier=00000&amp;dpc=1"&gt;
+&lt;/iframe&gt;
+</code>
+其实就是各种参数，最后写成一个<code>weibo.html</code>,放到<code>.theme/&lt;所用的主题名&gt;/source/_includes/asides</code>，</p>
+
+<p>``` html weibo.html
+</p>
+<section>
+  <h1>新浪微博</h1>
+  <ul id="weibo">
+    <li>
+      <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?width=0&amp;height=550&amp;ptype=1&amp;speed=0&amp;skin=&amp;isTitle=0&amp;noborder=1&amp;isWeibo=1&amp;isFans=&amp;uid=1939925155&amp;verifier=37f07f18">
+      </iframe>
+    </li>
+  </ul>
+</section>
+<p>
+```
+此外，还需要修改<code>_config.yml</code></p>
+
+<p><code>bash _config.yml
+# 在 default_asides中添加asides/weibo.thml
+default_asides: [asides/recent_posts.html, asides/weibo.html, asides/github.html, asides/[Twitter][].html, asides/googleplus.html]
+weibo_uid: # 通过微博秀中获得
+weibo_verifier: #微博秀中获得
+weibo_fansline: 0   # 粉丝显示多少行
+weibo_show: true    # 是否显示最近微博内容
+weibo_pic: true     # 是否显示微博中的图片
+weibo_skin: 10      # 使用哪种配色风格，数字为从1开始的微博秀风格序号
+</code></p>
+
+<p><code>weibo_uid</code>和<code>weibo_verifier</code>从微博秀中的代码中得到</p>
 ]]></content>
   </entry>
   
