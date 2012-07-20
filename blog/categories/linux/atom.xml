@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | 滴水穿石]]></title>
+  <link href="http://chenyuefeng.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://chenyuefeng.github.com/"/>
+  <updated>2012-07-20T21:04:28+08:00</updated>
+  <id>http://chenyuefeng.github.com/</id>
+  <author>
+    <name><![CDATA[Chen Yuefeng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress 增加Navibar]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-zeng-jia-navibar/"/>
+    <updated>2012-07-20T20:29:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-zeng-jia-navibar</id>
+    <content type="html"><![CDATA[<p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
+
+<p><code>bash 
+rake new_page[About]
+</code>
+这是会在<code>source/</code>目录先生产<code>about</code>目录以及<code>index.markdown</code>，如果这样直接<code>generate</code>，是不会把<code>about</code>页面增加到<code>navibar</code>中的，需要在<code>navigation.html</code>中进行设置，如果直接在<code>/source/_includes/custom/navigation.html</code>中修改，那么在切换主题时，改修改是不会保存的，需要再次修改，所以最好的方法是在主题文件中修改</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>.theme/classic/source/_includes/custom/navigation.html
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+修改成</p>
+
+<p>``` html navigation.html
+&lt;ul class="main-navigation"&gt;</p>
+<li><a href="/">Blog</a></li>
+<li><a href="/blog/archives">Archives</a></li>
+<li><a href="/about">About</a></li>
+<p>&lt;/ul&gt;
+```
+然后重新安装主题，</p>
+
+<p><code>bash
+rake install['theme name']
+rake generate
+rake deploy
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
