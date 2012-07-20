@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T13:55:32+08:00</updated>
+  <updated>2012-07-20T14:10:34+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -18,7 +18,8 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/17/cheng-xu-yuan-yu-lu/"/>
     <updated>2012-07-17T00:36:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/17/cheng-xu-yuan-yu-lu</id>
-    <content type="html"><![CDATA[<p>设计者确定其设计已经达到了完美的标准不是不能再增加任何东西，而是不能再减少任何东西。&#8212;&#8211;Anotine de Saint-Exupery 法国作家兼飞机设计师</p>]]></content>
+    <content type="html"><![CDATA[<p>设计者确定其设计已经达到了完美的标准不是不能再增加任何东西，而是不能再减少任何东西。—–Anotine de Saint-Exupery 法国作家兼飞机设计师</p>
+]]></content>
   </entry>
   
   <entry>
@@ -27,100 +28,129 @@
     <updated>2012-07-13T00:20:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/13/octopress-pei-zhi</id>
     <content type="html"><![CDATA[<p>安装rvm,用rvm来安装 Ruby 1.9.2</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install rvm
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">yum install rvm
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>安装 Ruby 1.9.2</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rvm install 1.9.2 <span class='o'>&amp;&amp;</span> rvm use 1.9.2
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rvm install 1.9.2 <span class="o">&amp;&amp;</span> rvm use 1.9.2
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>安装 Octopress</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'><span class='nb'>cd </span>octopress
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone git://github.com/imathis/octopress.git octopress
+</span><span class="line"><span class="nb">cd </span>octopress
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>安装 bundler</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>gem install bundler
-</span><span class='line'>bundle install
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">gem install bundler
+</span><span class="line">bundle install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>如果在安装 bundler 出现以下错误</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>ERROR:  Loading <span class='nb'>command</span>: install <span class='o'>(</span>LoadError<span class='o'>)</span>
-</span><span class='line'>    cannot load such file -- zlib
-</span><span class='line'>ERROR:  While executing gem ... <span class='o'>(</span>NameError<span class='o'>)</span>
-</span><span class='line'>    uninitialized constant Gem::Commands::InstallCommand
-</span></code></pre></td></tr></table></div></figure>
-<p>这是由于缺少zlib openssl 库的支持,安装zlib和openssl <figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class='nb'>cd</span> /usr/local/rvm/src/ruby-1.9.2-p320/ext/zlib
-</span><span class='line'>ruby ./extconf.rb
-</span><span class='line'>make
-</span><span class='line'>make install
-</span><span class='line'><span class='nb'>cd</span> /usr/local/rvm/src/ruby-1.9.2-p320/ext/openssl
-</span><span class='line'>ruby ./extconf.rb
-</span><span class='line'>make
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">ERROR:  Loading <span class="nb">command</span>: install <span class="o">(</span>LoadError<span class="o">)</span>
+</span><span class="line">    cannot load such file -- zlib
+</span><span class="line">ERROR:  While executing gem ... <span class="o">(</span>NameError<span class="o">)</span>
+</span><span class="line">    uninitialized constant Gem::Commands::InstallCommand
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这是由于缺少zlib openssl 库的支持,安装zlib和openssl
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;figcaption&gt;<span></span>&lt;/figcaption&gt;&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class="bash"><span class="line"><span class="nb">cd</span> /usr/local/rvm/src/ruby-1.9.2-p320/ext/zlib
+</span><span class="line">ruby ./extconf.rb
+</span><span class="line">make
+</span><span class="line">make install
+</span><span class="line"><span class="nb">cd</span> /usr/local/rvm/src/ruby-1.9.2-p320/ext/openssl
+</span><span class="line">ruby ./extconf.rb
+</span><span class="line">make
+</span><span class="line">make install
+</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
 <p>安装默认主题</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake install
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rake install
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <p>部署</p>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git@github.com:yourname/project.git
-</span><span class='line'><span class='nb'>cd </span>project
-</span><span class='line'>rake setup_github_pages
-</span><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span><span class='line'>git add .
-</span><span class='line'>git commit -am <span class='s2'>&quot;   &quot;</span>
-</span><span class='line'>git push git@github.com:yourname/project.git HEAD:source
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone git@github.com:yourname/project.git
+</span><span class="line"><span class="nb">cd </span>project
+</span><span class="line">rake setup_github_pages
+</span><span class="line">rake generate
+</span><span class="line">rake deploy
+</span><span class="line">git add .
+</span><span class="line">git commit -am <span class="s2">&quot;   &quot;</span>
+</span><span class="line">git push git@github.com:yourname/project.git HEAD:source
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 <p>配置comments和社交网络工具</p>
 
 <ul>
-<li>在_config.yml中增加一项: weibo_share: true</li>
-
-<li>修改source/_includes/post/sharing.html，增加</li>
+  <li>在_config.yml中增加一项: weibo_share: true</li>
+  <li>修改source/_includes/post/sharing.html，增加</li>
 </ul>
-<figure class='code'><figcaption><span /></figcaption><div class='highlight'><table><tr><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class='o'>{</span>%  <span class='k'>if </span>site.weibo_share %<span class='o'>}</span>
-</span><span class='line'>	<span class='o'>{</span>% include post/weibo.html %<span class='o'>}</span>
-</span><span class='line'><span class='o'>{</span>% endif %<span class='o'>}</span>
-</span></code></pre></td></tr></table></div></figure>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="o">{</span>%  <span class="k">if </span>site.weibo_share %<span class="o">}</span>
+</span><span class="line">	<span class="o">{</span>% include post/weibo.html %<span class="o">}</span>
+</span><span class="line"><span class="o">{</span>% endif %<span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 <ul>
-<li>增加文件: source/_includes/post/weibo.html</li>
-
-<li>访问<a href='http://www.jiathis.com/' title='Jiathis'>http://www.jiathis.com/</a>，复制code</li>
-
-<li>访问<a href='http://uyan.cc' title='uyan'>http://uyan.cc/</a>复制code</li>
-
-<li>将上面两个code复制到weibo.html中即可</li>
+  <li>增加文件: source/_includes/post/weibo.html</li>
+  <li>访问<a href="http://www.jiathis.com/" title="Jiathis">http://www.jiathis.com/</a>，复制code</li>
+  <li>访问<a href="http://uyan.cc" title="uyan">http://uyan.cc/</a>复制code</li>
+  <li>将上面两个code复制到weibo.html中即可</li>
 </ul>
 
-<p>$$ \begin{align<em>} &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \ &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc} \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \ \vdots &amp; \ddots &amp; \vdots \ \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n) \end{array} \right) \left( \begin{array}{c} y_1 \ \vdots \ y_n \end{array} \right) \end{align</em>} $$</p>]]></content>
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( 
+    \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]&gt;</script>
+]]></content>
   </entry>
   
   <entry>
@@ -128,11 +158,12 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/12/a-new-octopress-blog/"/>
     <updated>2012-07-12T23:52:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/12/a-new-octopress-blog</id>
-    <content type="html"><![CDATA[<h2 id='test_the_octpress_blog'>Test the octpress blog</h2>
+    <content type="html"><![CDATA[<h2 id="test-the-octpress-blog">Test the octpress blog</h2>
 
-<h3 id='test_the_octpress_blog'>Test the octpress blog</h3>
+<h3 id="test-the-octpress-blog-1">Test the octpress blog</h3>
 
-<h4 id='test_the_octpress_blog'>Test the octpress blog</h4>]]></content>
+<h4 id="test-the-octpress-blog-2">Test the octpress blog</h4>
+]]></content>
   </entry>
   
 </feed>
