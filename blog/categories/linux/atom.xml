@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | 滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T21:37:48+08:00</updated>
+  <updated>2012-07-20T21:42:28+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -87,7 +87,7 @@ rake deploy
 
 <p><code>bash _config.yml
 # 在 default_asides中添加asides/weibo.thml
-default_asides: [asides/recent_posts.html, asides/weibo.html, asides/github.html, asides/[Twitter][].html, asides/googleplus.html]
+default_asides: [asides/recent_posts.html, asides/weibo.html, asides/github.html, asides/Twitter.html, asides/googleplus.html]
 weibo_uid: # 通过微博秀中获得
 weibo_verifier: #微博秀中获得
 weibo_fansline: 0   # 粉丝显示多少行
