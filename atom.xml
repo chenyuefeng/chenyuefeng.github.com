@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T00:44:37+08:00</updated>
+  <updated>2012-07-20T11:42:28+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -144,30 +144,6 @@
 <li>访问<a href="http://uyan.cc" title="uyan">http://uyan.cc/</a>复制code</li>
 <li>将上面两个code复制到weibo.html中即可</li>
 </ul>
-
-
-<!-- 
-<figure class='code'><figcaption><span>install java </span><a href='http://java.com/'>test</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>sudo yum install jave
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span>install cpp </span><a href='http://java.com/'>test</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include&lt;iostream&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-&#8211;>
 
 ]]></content>
   </entry>
