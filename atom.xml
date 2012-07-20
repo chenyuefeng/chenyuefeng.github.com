@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T23:18:00+08:00</updated>
+  <updated>2012-07-20T23:47:38+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -88,7 +88,24 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 <p>其实就是各种参数，最后写成一个<code>weibo.html</code>,放到<code>.theme/&lt;所用的主题名&gt;/source/_includes/asides</code>，</p>
 
-<p>{% gist 9b1766d2529be52f9348 weibo.html %}</p>
+<div><script src="https://gist.github.com/3151361.js?file=weibo.html"></script>
+<noscript><pre><code>{% if site.weibo_uid %}
+&lt;section&gt;
+  &lt;h1&gt;新浪微博&lt;/h1&gt;
+  &lt;ul id=&quot;weibo&quot;&gt;
+    &lt;li&gt;
+      &lt;iframe
+        width=&quot;100%&quot;
+        height=&quot;550&quot;
+        class=&quot;share_self&quot;
+        frameborder=&quot;0&quot;
+        scrolling=&quot;no&quot;
+        src=&quot;http://widget.weibo.com/weiboshow/index.php?width=0&amp;height=550&amp;ptype={% if site.weibo_pic %}1{% else %}0{% endif %}&amp;speed=0&amp;skin={{weibo_skin}}&amp;isTitle=0&amp;noborder=1&amp;isWeibo={% if site.weibo_show %}1{% else %}0{% endif %}&amp;isFans={{weibo_fansline}}&amp;uid={{site.weibo_uid}}&amp;verifier={{site.weibo_verifier}}&quot;&gt;
+      &lt;/iframe&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+{% endif %}</code></pre></noscript></div>
 
 <p>此外，还需要修改<code>_config.yml</code></p>
 
