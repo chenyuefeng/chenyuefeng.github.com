@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-21T00:30:52+08:00</updated>
+  <updated>2012-07-21T00:34:19+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -62,9 +62,10 @@ gem install kramdown
 
 <p><code>ruby
 markdown: kramdown  #rdiscount
-</code>
-## Attentation ##
-使用<code>kramdown</code>时，对<code>markdown</code>的语法比<code>rdiscount</code>更加严格，例如<code>```lang</code>之前必须空行
+</code></p>
+
+<h2 id="attentation">Attentation</h2>
+<p>使用<code>kramdown</code>时，对<code>markdown</code>的语法比<code>rdiscount</code>更加严格，例如<code>```lang</code>之前必须空行
 以<code>##</code>为标题的之后不能有空行</p>
 
 <h2 id="section">右键点击页面消失</h2>
@@ -83,7 +84,8 @@ index 9a50a8b..fc9dc37 100644
      border-bottom: 1px solid $page-border-bottom;
      &gt; div {</p>
 
-<p>样例：```</p>
+<p>```
+样例：</p>
 
 <p><code>tex 
 $$
