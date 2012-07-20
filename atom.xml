@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T23:47:38+08:00</updated>
+  <updated>2012-07-21T00:30:52+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -12,6 +12,182 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress Latex]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex/"/>
+    <updated>2012-07-20T23:49:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex</id>
+    <content type="html"><![CDATA[<p>首先安装<code>kramdown</code>包</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="n">install</span> <span class="n">kramdown</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>再把下面的代码添加到<code>.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html</code>文件中:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="c">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+</span><span class="line">    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
+</span><span class="line">      <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="s2">&quot;\\)&quot;</span><span class="p">]</span> <span class="p">],</span>
+</span><span class="line">      <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">  <span class="p">});</span>
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+</span><span class="line">      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
+</span><span class="line">        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
+</span><span class="line">      <span class="p">}</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">        <span class="kd">var</span> <span class="nx">all</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">getAllJax</span><span class="p">(),</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class="line">        <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">            <span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">SourceElement</span><span class="p">().</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s1">&#39; has-jax&#39;</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">    <span class="p">});</span>
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>
+</span><span class="line">   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;</span>
+</span><span class="line"><span class="nt">&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>修改<code>_config.yml</code></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">markdown</span><span class="p">:</span> <span class="n">kramdown</span>  <span class="c1">#rdiscount</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>## Attentation ##
+使用<code>kramdown</code>时，对<code>markdown</code>的语法比<code>rdiscount</code>更加严格，例如<code>```lang</code>之前必须空行
+以<code>##</code>为标题的之后不能有空行</p>
+
+<h2 id="section">右键点击页面消失</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>fix for right-click</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+</pre></td><td class="code"><pre><code class="diff"><span class="line"><span class="gh">diff --git a/sass/base/_theme.scss b/sass/base/_theme.scss</span>
+</span><span class="line"><span class="gh">index 9a50a8b..fc9dc37 100644</span>
+</span><span class="line"><span class="gd">--- a/sass/base/_theme.scss</span>
+</span><span class="line"><span class="gi">+++ b/sass/base/_theme.scss</span>
+</span><span class="line"><span class="gu">@@ -75,7 +75,7 @@ html {</span>
+</span><span class="line">   background: $page-bg image-url(&#39;line-tile.png&#39;) top left;
+</span><span class="line"> }
+</span><span class="line"> body {
+</span><span class="line"><span class="gd">-  &gt; div {</span>
+</span><span class="line"><span class="gi">+  &gt; div#main {</span>
+</span><span class="line">     background: $sidebar-bg $noise-bg;
+</span><span class="line">     border-bottom: 1px solid $page-border-bottom;
+</span><span class="line">     &gt; div {
+</span><span class="line">
+</span><span class="line">样例：```
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>tex 
+$$
+\begin{align<em>}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
+      \vdots &amp; \ddots &amp; \vdots <br />
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 <br />
+      \vdots <br />
+      y_n
+    \end{array} \right)
+\end{align</em>}
+$$
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;figcaption&gt;<span>fix for right-click</span>&lt;/figcaption&gt;&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class="diff"><span class="line">就会得到
+</span><span class="line">
+</span><span class="line">$$
+</span><span class="line">\begin{align*}
+</span><span class="line">  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+</span><span class="line">  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+</span><span class="line">  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+</span><span class="line">      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
+</span><span class="line">      \vdots &amp; \ddots &amp; \vdots \\
+</span><span class="line">      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+</span><span class="line">    \end{array} \right)
+</span><span class="line">  \left( \begin{array}{c}
+</span><span class="line">      y_1 \\
+</span><span class="line">      \vdots \\
+</span><span class="line">      y_n
+</span><span class="line">    \end{array} \right)
+</span><span class="line">\end{align*}
+</span><span class="line">$$
+</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt; tex
+段内插入公式：$\exp(-\frac{x^2}{2})$
+&#8220;`
+段内插入公式：$\exp(-\frac{x^2}{2})$</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress 增加Navibar]]></title>

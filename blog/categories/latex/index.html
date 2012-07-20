@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress 增加Navibar - 滴水穿石</title>
+  <title>Category: latex - 滴水穿石</title>
   <meta name="author" content="Chen Yuefeng">
 
   
-  <meta name="description" content="首先用rake来增加一个需要增加的页面，例如: 1
-rake new_page[About] 这是会在source/目录先生产about目录以及index.markdown，如果这样直接generate，是不会把about页面增加到navibar中的，需要在navigation.html中进行设置 &hellip;">
+  <meta name="description" content="Category: latex">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ rake new_page[About] 这是会在source/目录先生产about目录以及index.ma
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-zeng-jia-navibar/">
+  <link rel="canonical" href="http://chenyuefeng.github.comblog/categories/latex/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -108,138 +107,35 @@ rake new_page[About] 这是会在source/目录先生产about目录以及index.ma
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Octopress 增加Navibar</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-20T20:29:00+08:00" pubdate data-updated="true">Jul 20<span>th</span>, 2012</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Latex</h1>
     
   </header>
-
-
-<div class="entry-content"><p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rake new_page<span class="o">[</span>About<span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>这是会在<code>source/</code>目录先生产<code>about</code>目录以及<code>index.markdown</code>，如果这样直接<code>generate</code>，是不会把<code>about</code>页面增加到<code>navibar</code>中的，需要在<code>navigation.html</code>中进行设置，如果直接在<code>/source/_includes/custom/navigation.html</code>中修改，那么在切换主题时，改修改是不会保存的，需要再次修改，所以最好的方法是在主题文件中修改</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">.theme/classic/source/_includes/custom/navigation.html
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>修改成</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>navigation.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;main-navigation&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/blog/archives&quot;</span><span class="nt">&gt;</span>Archives<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/about&quot;</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class="line"><span class="nt">&lt;/ul&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>然后重新安装主题，</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rake install<span class="o">[</span><span class="s1">&#39;theme name&#39;</span><span class="o">]</span>
-</span><span class="line">rake generate
-</span><span class="line">rake deploy
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Chen Yuefeng</span></span>
-
-      
-
-
-
-
-
+  <div id="blog-archives" class="category">
 
 
 
   
+  <h2>2012</h2>
+
+<article>
+  
+<h1><a href="/blog/2012/07/20/octopress-latex/">Octopress Latex</a></h1>
+<time datetime="2012-07-20T23:49:00+08:00" pubdate><span class='month'>Jul</span> <span class='day'>20</span> <span class='year'>2012</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/latex/'>latex</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
+</footer>
 
 
-<time datetime="2012-07-20T20:29:00+08:00" pubdate data-updated="true">Jul 20<span>th</span>, 2012</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-  
-     <!-- JiaThis Button BEGIN -->
-<div id="ckepop">
-	<span class="jiathis_txt">分享到：</span>
-	<a class="jiathis_button_tsina">新浪微博</a>
-	<a class="jiathis_button_renren">人人网</a>
-	<a class="jiathis_button_tqq">腾讯微博</a>
-	<a class="jiathis_button_qzone">QQ空间</a>
-	<a href="http://www.jiathis.com/share?uid=1648645" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-	<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js?uid=1648645" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=0" async=""></script>
-<!-- UY END -->
-
-  
+</article>
 
 </div>
 
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan/" title="Previous Post: Octopress 新浪微博侧边栏">&laquo; Octopress 新浪微博侧边栏</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/07/20/octopress-latex/" title="Next Post: Octopress Latex">Octopress Latex &raquo;</a>
-      
-    </p>
-  </footer>
+  
 </article>
 
 </div>

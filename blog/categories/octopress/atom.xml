@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-20T23:47:38+08:00</updated>
+  <updated>2012-07-21T00:30:52+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -12,6 +12,123 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress Latex]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex/"/>
+    <updated>2012-07-20T23:49:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex</id>
+    <content type="html"><![CDATA[<p>首先安装<code>kramdown</code>包</p>
+
+<p><code>ruby
+gem install kramdown
+</code>
+再把下面的代码添加到<code>.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html</code>文件中:</p>
+
+<p>``` html 
+<!-- mathjax config similar to math.stackexchange --></p>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<p>```
+修改<code>_config.yml</code></p>
+
+<p><code>ruby
+markdown: kramdown  #rdiscount
+</code>
+## Attentation ##
+使用<code>kramdown</code>时，对<code>markdown</code>的语法比<code>rdiscount</code>更加严格，例如<code>```lang</code>之前必须空行
+以<code>##</code>为标题的之后不能有空行</p>
+
+<h2 id="section">右键点击页面消失</h2>
+<p>``` diff fix for right-click
+diff –git a/sass/base/_theme.scss b/sass/base/_theme.scss
+index 9a50a8b..fc9dc37 100644
+— a/sass/base/_theme.scss
++++ b/sass/base/_theme.scss
+@@ -75,7 +75,7 @@ html {
+   background: $page-bg image-url(‘line-tile.png’) top left;
+ }
+ body {
+-  &gt; div {
++  &gt; div#main {
+     background: $sidebar-bg $noise-bg;
+     border-bottom: 1px solid $page-border-bottom;
+     &gt; div {</p>
+
+<p>样例：```</p>
+
+<p><code>tex 
+$$
+\begin{align*}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
+      \vdots &amp; \ddots &amp; \vdots \\
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+$$
+</code>
+就会得到</p>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]&gt;</script>
+
+<p><code>tex
+段内插入公式：$\exp(-\frac{x^2}{2})$
+</code>
+段内插入公式：$\exp(-\frac{x^2}{2})$</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress 增加Navibar]]></title>
