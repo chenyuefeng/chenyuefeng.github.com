@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-22T12:39:13+08:00</updated>
+  <updated>2012-07-22T19:41:00+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -12,6 +12,182 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[字符串循环移位]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/"/>
+    <updated>2012-07-22T19:06:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei</id>
+    <content type="html"><![CDATA[<h2 id="section">问题描述</h2>
+<p>将一个n元一维向量向左循环移位k个位置。例如，<code>n=9，k=3</code>， 向量<code>abcdefghi</code>就变成了<code>defghiabc</code>，在考虑到节省内存的情况下，如何在<code>O(n)</code>的复杂度下对向量进行移位。</p>
+
+<h2 id="section-1">方法一</h2>
+<p>移动<code>c = x[0], x[0] = x[k], x[k] = x[2*k], ...</code>依次类推，直到返回到<code>x[0]</code>，改为从<code>c</code>取值。
+<!-- more --></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shift_zaji.c fist algorithm</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">r</span><span class="p">;</span>
+</span><span class="line">        <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span><span class="line">                <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">;</span>
+</span><span class="line">                <span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+</span><span class="line">                        <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+</span><span class="line">                <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+</span><span class="line">                <span class="n">b</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">void</span> <span class="nf">shift</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">turns</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">);</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">tmp</span><span class="p">;</span>
+</span><span class="line">        <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+</span><span class="line">        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+</span><span class="line">        <span class="k">for</span><span class="p">(</span> <span class="n">i</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">turns</span><span class="p">;</span> <span class="o">++</span> <span class="n">i</span><span class="p">){</span>
+</span><span class="line">                <span class="n">c</span> <span class="o">=</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class="line">                <span class="n">tmp</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span><span class="line">                <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span><span class="line">                        <span class="n">j</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">k</span><span class="p">;</span>
+</span><span class="line">                        <span class="k">if</span> <span class="p">(</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="p">)</span>
+</span><span class="line">                                <span class="n">j</span> <span class="o">-=</span> <span class="n">n</span><span class="p">;</span>
+</span><span class="line">                        <span class="k">if</span> <span class="p">(</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span> <span class="p">)</span>
+</span><span class="line">                                <span class="k">break</span><span class="p">;</span>
+</span><span class="line">                        <span class="n">str</span><span class="p">[</span><span class="n">tmp</span><span class="p">]</span> <span class="o">=</span>  <span class="n">str</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span><span class="line">                        <span class="n">tmp</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+</span><span class="line">                <span class="p">}</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">tmp</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-2">方法二  块交换算法</h2>
+<p>对向量进行循环移位其实是交换向量<code>ab</code>的两个部分，得到向量<code>ba</code>,如果<code>a</code>代表向量的前<code>k</code>个元素,分为两种情况，
+*   <code>length(a) &lt; length(b)</code>那么将b分为<code>b_l, b_r</code>, 其中<code>b_r</code>与<code>a</code>等长，那么将<code>a</code>与<code>b_r</code>进行交换，最后形成<code>b_rb_la</code>,现在只要交换<code>b_rb_l</code>的子问题。
+*   <code>length(a) &gt;= length(b)</code>那么将a分为<code>a_l, a_r</code>, 其中<code>a_l</code>与<code>b</code>等长，那么将<code>a_l</code>与<code>b</code>进行交换，最后形成<code>ba_ra_l</code>,现在只要交换<code>a_ra_l</code>的子问题。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shift_block_swap.c block swap algorithm</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a_l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b_l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">a_l</span> <span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">b_l</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
+</span><span class="line">        <span class="k">for</span><span class="p">(</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">k</span> <span class="o">++</span><span class="p">){</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">a_l</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">^=</span> <span class="n">str</span><span class="p">[</span><span class="n">b_l</span> <span class="o">+</span> <span class="n">k</span><span class="p">];</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">b_l</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">^=</span> <span class="n">str</span><span class="p">[</span><span class="n">a_l</span> <span class="o">+</span> <span class="n">k</span><span class="p">];</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">a_l</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">^=</span> <span class="n">str</span><span class="p">[</span><span class="n">b_l</span> <span class="o">+</span> <span class="n">k</span><span class="p">];</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">void</span> <span class="nf">shift</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+</span><span class="line">        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">p</span><span class="p">;</span>
+</span><span class="line">        <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">){</span>
+</span><span class="line">                <span class="k">if</span><span class="p">(</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span> <span class="p">){</span>
+</span><span class="line">                        <span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="n">i</span> <span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+</span><span class="line">                        <span class="n">i</span> <span class="o">-=</span> <span class="n">j</span><span class="p">;</span>
+</span><span class="line">                <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</span><span class="line">                        <span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span><span class="line">                        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span>
+</span><span class="line">                <span class="p">}</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line">        <span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">p</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="section-3">方法三 求逆算法</h2>
+<p>同方法二，将问题归结为<code>ab</code>转化为<code>ba</code>，先对<code>a</code>求逆得<code>a_r</code>,对<code>b</code>求逆<code>b_r</code>，对<code>a_rb_r</code>逆得<code>ba</code>，就是所求的结果</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shift_reverse.c reverse algorithm</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">void</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">        <span class="k">while</span><span class="p">(</span> <span class="n">start</span> <span class="o">&lt;</span>  <span class="n">end</span> <span class="p">){</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">^=</span> <span class="n">str</span><span class="p">[</span><span class="n">end</span><span class="p">];</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">^=</span> <span class="n">str</span><span class="p">[</span><span class="n">start</span><span class="p">];</span>
+</span><span class="line">                <span class="n">str</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">^=</span> <span class="n">str</span><span class="p">[</span><span class="n">end</span><span class="p">];</span>
+</span><span class="line">                <span class="n">start</span> <span class="o">++</span><span class="p">;</span>
+</span><span class="line">                <span class="n">end</span> <span class="o">--</span><span class="p">;</span>
+</span><span class="line">        <span class="p">}</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kt">void</span> <span class="nf">shift</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+</span><span class="line"><span class="p">{</span>
+</span><span class="line">        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="n">n</span><span class="p">;</span>
+</span><span class="line">        <span class="n">reverse</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class="line">        <span class="n">reverse</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class="line">        <span class="n">reverse</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress Latex]]></title>

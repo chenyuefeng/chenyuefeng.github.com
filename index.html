@@ -9,24 +9,9 @@
   <meta name="author" content="Chen Yuefeng">
 
   
-  <meta name="description" content="首先安装kramdown包 1
-gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html文件中: 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17 &hellip;">
+  <meta name="description" content="问题描述
+将一个n元一维向量向左循环移位k个位置。例如，n=9，k=3， 向量abcdefghi就变成了defghiabc，在考虑到节省内存的情况下，如何在O(n)的复杂度下对向量进行移位。 方法一
+移动c = x[0], x[0] = x[k], x[k] = x[2*k], ...依次类推， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -125,6 +110,50 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/">字符串循环移位</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-22T19:06:00+08:00" pubdate data-updated="true">Jul 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="section">问题描述</h2>
+<p>将一个n元一维向量向左循环移位k个位置。例如，<code>n=9，k=3</code>， 向量<code>abcdefghi</code>就变成了<code>defghiabc</code>，在考虑到节省内存的情况下，如何在<code>O(n)</code>的复杂度下对向量进行移位。</p>
+
+<h2 id="section-1">方法一</h2>
+<p>移动<code>c = x[0], x[0] = x[k], x[k] = x[2*k], ...</code>依次类推，直到返回到<code>x[0]</code>，改为从<code>c</code>取值。
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -708,6 +737,10 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/">字符串循环移位</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/20/octopress-latex/">Octopress Latex</a>
       </li>
     
@@ -721,10 +754,6 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
     
       <li class="post">
         <a href="/blog/2012/07/17/cheng-xu-yuan-yu-lu/">程序员语录</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/13/octopress-pei-zhi/">Octopress 配置</a>
       </li>
     
   </ul>
