@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-23T01:01:15+08:00</updated>
+  <updated>2012-07-23T01:06:18+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -112,6 +112,7 @@
 </span><span class="line">rake generate
 </span><span class="line">rake deploy
 </span></code></pre></td></tr></table></div></figure></notextile></div>
+
 [1]:           http://www.mathjax.org/		&#8220;MathJax&#8221;
 </使用的主题名></span></figcaption></figure></notextile></div>
 ]]></content>

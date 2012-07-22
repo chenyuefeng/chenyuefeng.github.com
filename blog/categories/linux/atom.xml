@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | 滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-23T01:01:15+08:00</updated>
+  <updated>2012-07-23T01:06:18+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -18,9 +18,9 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax/"/>
     <updated>2012-07-23T00:06:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax</id>
-    <content type="html"><![CDATA[<p>前面文章中讲过如何在<code>octopress</code>中配置<code>latex</code>，但加入<code>latex</code>支持后打开网页的速度明显变慢，主要原因是国内[MathJax][1]的服务器经常被墙，导致加载每个<code>page</code>的速度非常慢。
-针对上述问题，主要解决方法是每个<code>post</code>设定是否加载[MathJax][1],这样就会使得博客主页以及不需要加载[MathJax][1]的页面加载速度变快。下面介绍如何进行修改：
-在需要加载[MathJax][1]的<code>post</code>中加入<code>latex: true</code>，如果不需要加载，就直接不用添加，如下所示</p>
+    <content type="html"><![CDATA[<p>前面文章中讲过如何在<code>octopress</code>中配置<code>latex</code>，但加入<code>latex</code>支持后打开网页的速度明显变慢，主要原因是国内<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>的服务器经常被墙，导致加载每个<code>page</code>的速度非常慢。
+针对上述问题，主要解决方法是每个<code>post</code>设定是否加载<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>,这样就会使得博客主页以及不需要加载<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>的页面加载速度变快。下面介绍如何进行修改：
+在需要加载<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>的<code>post</code>中加入<code>latex: true</code>，如果不需要加载，就直接不用添加，如下所示</p>
 
 <p><code>bash
 layout: post
@@ -76,8 +76,8 @@ categories: [ octopress, linux, latex ]
 rake install["使用的主题名"]
 rake generate
 rake deploy
-</code>
-[1]:           http://www.mathjax.org/		“MathJax”</p>
+</code></p>
+
 ]]></content>
   </entry>
   
