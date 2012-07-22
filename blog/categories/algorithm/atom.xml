@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: algorithm | 滴水穿石]]></title>
+  <link href="http://chenyuefeng.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
+  <link href="http://chenyuefeng.github.com/"/>
+  <updated>2012-07-22T20:18:29+08:00</updated>
+  <id>http://chenyuefeng.github.com/</id>
+  <author>
+    <name><![CDATA[Chen Yuefeng]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[字符串循环移位]]></title>
+    <link href="http://chenyuefeng.github.com/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/"/>
+    <updated>2012-07-22T19:06:00+08:00</updated>
+    <id>http://chenyuefeng.github.com/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei</id>
+    <content type="html"><![CDATA[<h2 id="section">问题描述</h2>
+<p>将一个n元一维向量向左循环移位k个位置。例如，<code>n=9，k=3</code>， 向量<code>abcdefghi</code>就变成了<code>defghiabc</code>，在考虑到节省内存的情况下，如何在<code>O(n)</code>的复杂度下对向量进行移位。</p>
+
+<h2 id="section-1">方法一</h2>
+<p>移动<code>c = x[0], x[0] = x[k], x[k] = x[2*k], ...</code>依次类推，直到返回到<code>x[0]</code>，改为从<code>c</code>取值。
+<!-- more --></p>
+
+<p><code>c shift_zaji.c fist algorithm
+int gcd(int a, int b)
+{
+        int r;
+        while(1){
+                r = a % b;
+                if ( r == 0 )
+                        return b;
+                a = b;
+                b = r;
+        }
+}
+void shift(char * str, int n, int k)
+{
+        int turns = gcd(n, k);
+        int i, j, tmp;
+        char c;
+        k = k % n;
+        for( i= 0; i &lt; turns; ++ i){
+                c = str[i];
+                tmp = i;
+                while (1){
+                        j = tmp + k;
+                        if ( j &gt;= n )
+                                j -= n;
+                        if ( j == i )
+                                break;
+                        str[tmp] =  str[j];
+                        tmp = j;
+                }       
+                str[tmp] = c;
+        }
+}       
+</code></p>
+
+<h2 id="section-2">方法二  块交换算法</h2>
+<p>对向量进行循环移位其实是交换向量<code>ab</code>的两个部分，得到向量<code>ba</code>,如果<code>a</code>代表向量的前<code>k</code>个元素,分为两种情况，</p>
+
+<ul>
+  <li><code>length(a) &lt; length(b)</code>那么将<code>b</code>分为<code>b<sub>l</sub>b<sub>r</sub></code>, 其中<code>b<sub>r</sub></code>与<code>a</code>等长，那么将<code>a</code>与<code>b<sub>r</sub></code>进行交换，最后形成<code>b<sub>r</sub>b<sub>l</sub>a</code>,现在只要交换<code>b<sub>r</sub>b<sub>l</sub></code>的子问题。</li>
+  <li><code>length(a) &gt;= length(b)</code>那么将<code>a</code>分为<code>a<sub>l</sub>a<sub>r</sub></code>, 其中<code>a<sub>l</sub></code>与<code>b</code>等长，那么将<code>a<sub>l</sub></code>与<code>b</code>进行交换，最后形成<code>ba<sub>r</sub>a<sub>l</sub></code>,现在只要交换<code>a<sub>r</sub>a<sub>l</sub></code>的子问题。</li>
+</ul>
+
+<p><code>c shift_block_swap.c block swap algorithm
+void swap(char * str, int a_l, int b_l, int len)
+{
+        int i = a_l , j = b_l, k;
+        for( k = 0; k &lt; len; k ++){
+                str[a_l + k] ^= str[b_l + k]; 
+                str[b_l + k] ^= str[a_l + k]; 
+                str[a_l + k] ^= str[b_l + k]; 
+        }   
+}
+void shift(char * str, int n, int k)
+{
+        int i = k;
+        int p = k;
+        int j = n - p;
+        while ( i != j){ 
+                if( i &gt; j ){
+                        swap(str, p - i , p, j); 
+                        i -= j;
+                }else {
+                        swap(str, p - i, p + j - i, i); 
+                        j = j - i;
+                }   
+        }   
+        swap(str, p - i, p, j); 
+}
+</code></p>
+
+<h2 id="section-3">方法三 求逆算法</h2>
+<p>同方法二，将问题归结为<code>ab</code>转化为<code>ba</code>，先对<code>a</code>求逆得<code>a<sup>r</sup></code>,对<code>b</code>求逆得到<code>b<sup>r</sup></code>，对<code>a<sup>r</sup>b<sup>r</sup></code>逆得<code>ba</code>，就是所求的结果</p>
+
+<p><code>c shift_reverse.c reverse algorithm
+void reverse(char * str, int start, int end)
+{
+        while( start &lt;  end ){
+                str[start] ^= str[end];
+                str[end] ^= str[start];
+                str[start] ^= str[end];
+                start ++; 
+                end --; 
+        }   
+}
+void shift(char * str, int n, int k)
+{
+        k = k % n;
+        reverse(str, 0, k - 1); 
+        reverse(str, k, n - 1); 
+        reverse(str, 0, n - 1); 
+}
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
