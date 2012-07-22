@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-23T01:06:18+08:00</updated>
+  <updated>2012-07-23T01:18:04+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -39,7 +39,37 @@
 <p>修改主题，<code>.themes/&lt;使用的主题名&gt;/source/_includes/head.html</code>,在最后面加入&#8220;
 <!-- more --></p>
 
-<p>Liquid error: bad URI(is not URI?): https://raw.github.com/gist/3160266/.themes/<使用的主题名>/source/_includes/head.html</使用的主题名></p>
+<div><script src="https://gist.github.com/3160266.js?file=head.html"></script>
+<noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;!--[if IEMobile 7 ]&gt;&lt;html class=&quot;no-js iem7&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if lt IE 9]&gt;&lt;html class=&quot;no-js lte-ie8&quot;&gt;&lt;![endif]--&gt;
+&lt;!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;&lt;html class=&quot;no-js&quot; lang=&quot;en&quot;&gt;&lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}&lt;/title&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;{{ site.author }}&quot;&gt;
+
+  {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+  &lt;meta name=&quot;description&quot; content=&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;&gt;
+  {% if page.keywords %}&lt;meta name=&quot;keywords&quot; content=&quot;{{ page.keywords }}&quot;&gt;{% endif %}
+
+  &lt;!-- http://t.co/dKP3o1e --&gt;
+  &lt;meta name=&quot;HandheldFriendly&quot; content=&quot;True&quot;&gt;
+  &lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+  {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
+  &lt;link rel=&quot;canonical&quot; href=&quot;{{ canonical }}&quot;&gt;
+  &lt;link href=&quot;{{ root_url }}/favicon.png&quot; rel=&quot;icon&quot;&gt;
+  &lt;link href=&quot;{{ root_url }}/stylesheets/screen.css&quot; media=&quot;screen, projection&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+  &lt;script src=&quot;{{ root_url }}/javascripts/modernizr-2.0.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;{{ root_url }}/javascripts/ender.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;{{ root_url }}/javascripts/octopress.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+  &lt;link href=&quot;{{ site.subscribe_rss }}&quot; rel=&quot;alternate&quot; title=&quot;{{site.title}}&quot; type=&quot;application/atom+xml&quot;&gt;
+  {% include custom/head.html %}
+  {% include google_analytics.html %}
+  {% if page.latex == true %}{% include post/latex.html %} {% endif %}
+&lt;/head&gt;</code></pre></noscript></div>
 
 <p>最后在<code>.themes/&lt;使用的主题名&gt;/source/_includes/post/</code>下面创建<code>latex.html</code></p>
 
