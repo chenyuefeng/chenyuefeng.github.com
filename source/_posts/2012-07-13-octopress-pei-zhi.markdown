@@ -5,7 +5,6 @@ date: 2012-07-13 00:20
 comments: true
 categories: 
 ---
-<!-- more -->
 安装rvm,用rvm来安装 Ruby 1.9.2
 
 ``` bash
@@ -104,3 +103,4 @@ $$
     \end{array} \right)
 \end{align*}
 $$
+<!-- more -->

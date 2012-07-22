@@ -5,7 +5,6 @@ date: 2012-07-20 20:09
 comments: true
 categories: [ octopress, linux ]
 ---
-<!-- more -->
 首先到[微博秀](http://weibo.com/login.php?url=http%3A%2F%2Fweibo.com%2Ftool%2Fweiboshow)获取需要嵌入的code，例如
 
 ``` html
@@ -40,3 +39,4 @@ weibo_skin: 10      # 使用哪种配色风格，数字为从1开始的微博秀
 ```
 
 `weibo_uid`和`weibo_verifier`从微博秀中的代码中得到
+<!-- more -->

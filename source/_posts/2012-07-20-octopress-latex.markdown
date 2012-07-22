@@ -5,7 +5,7 @@ date: 2012-07-20 23:49
 comments: true
 categories: [ octopress, linux, latex ]
 ---
-<!-- more -->
+
 首先安装`kramdown`包
 
 ``` ruby
@@ -116,3 +116,4 @@ $$
 段内插入公式：$\exp(-\frac{x^2}{2})$
 ```
 段内插入公式：$\exp(-\frac{x^2}{2})$
+<!-- more -->
