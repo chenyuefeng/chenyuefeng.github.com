@@ -3,6 +3,7 @@ layout: post
 title: "Octopress Latex"
 date: 2012-07-20 23:49
 comments: true
+latex: true
 categories: [ octopress, linux, latex ]
 ---
 
