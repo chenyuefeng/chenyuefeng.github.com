@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-23T01:18:04+08:00</updated>
+  <updated>2012-07-23T01:23:53+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -18,9 +18,9 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax/"/>
     <updated>2012-07-23T00:06:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax</id>
-    <content type="html"><![CDATA[<p>前面文章中讲过如何在<code>octopress</code>中配置<code>latex</code>，但加入<code>latex</code>支持后打开网页的速度明显变慢，主要原因是国内[MathJax][1]的服务器经常被墙，导致加载每个<code>page</code>的速度非常慢。
-针对上述问题，主要解决方法是每个<code>post</code>设定是否加载[MathJax][1],这样就会使得博客主页以及不需要加载[MathJax][1]的页面加载速度变快。下面介绍如何进行修改：
-在需要加载[MathJax][1]的<code>post</code>中加入<code>latex: true</code>，如果不需要加载，就直接不用添加，如下所示</p>
+    <content type="html"><![CDATA[<p>前面文章中讲过如何在<code>octopress</code>中配置<code>latex</code>，但加入<code>latex</code>支持后打开网页的速度明显变慢，主要原因是国内<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>的服务器经常被墙，导致加载每个<code>page</code>的速度非常慢。
+针对上述问题，主要解决方法是每个<code>post</code>设定是否加载<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>,这样就会使得博客主页以及不需要加载<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>的页面加载速度变快。下面介绍如何进行修改：
+在需要加载<a href="http://www.mathjax.org/" title="MathJax">MathJax</a>的<code>post</code>中加入<code>latex: true</code>，如果不需要加载，就直接不用添加，如下所示</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -73,67 +73,38 @@
 
 <p>最后在<code>.themes/&lt;使用的主题名&gt;/source/_includes/post/</code>下面创建<code>latex.html</code></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>.themes/<使用的主题名>/source/_includes/post/latex.html<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-</span><span class="line">    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">      <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="s2">&quot;\\)&quot;</span><span class="p">]</span> <span class="p">],</span>
-</span><span class="line">      <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
-</span><span class="line">    <span class="p">}</span>
-</span><span class="line">  <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-</span><span class="line">      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
-</span><span class="line">      <span class="p">}</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">all</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">getAllJax</span><span class="p">(),</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class="line">        <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">            <span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">SourceElement</span><span class="p">().</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s1">&#39; has-jax&#39;</span><span class="p">;</span>
-</span><span class="line">        <span class="p">}</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>
-</span><span class="line">   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div>
+<div><script src="https://gist.github.com/3160354.js?file=latex.html"></script>
+<noscript><pre><code>&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      processEscapes: true
+    }
+  });
+&lt;/script&gt;
 
-至此修改完成，只要重新安装主题，重新部署
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i &lt; all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;
+   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;</code></pre></noscript></div>
+
+<p>至此修改完成，只要重新安装主题，重新部署</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -143,8 +114,6 @@
 </span><span class="line">rake deploy
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-[1]:           http://www.mathjax.org/		&#8220;MathJax&#8221;
-</使用的主题名></span></figcaption></figure></notextile></div>
 ]]></content>
   </entry>
   
