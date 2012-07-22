@@ -5,7 +5,7 @@ date: 2012-07-20 20:29
 comments: true
 categories: [ octopress, linux ]
 ---
-
+<!-- more -->
 首先用`rake`来增加一个需要增加的页面，例如:
 
 ``` bash 

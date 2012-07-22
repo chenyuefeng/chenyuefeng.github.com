@@ -5,6 +5,7 @@ date: 2012-07-20 23:49
 comments: true
 categories: [ octopress, linux, latex ]
 ---
+<!-- more -->
 首先安装`kramdown`包
 
 ``` ruby
