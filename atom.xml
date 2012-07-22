@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-22T12:22:39+08:00</updated>
+  <updated>2012-07-22T12:30:39+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -18,8 +18,7 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex/"/>
     <updated>2012-07-20T23:49:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex</id>
-    <content type="html"><![CDATA[<!-- more -->
-<p>首先安装<code>kramdown</code>包</p>
+    <content type="html"><![CDATA[<p>首先安装<code>kramdown</code>包</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="n">install</span> <span class="n">kramdown</span>
@@ -185,7 +184,8 @@
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="tex"><span class="line">段内插入公式：<span class="s">$</span><span class="nv">\exp</span><span class="o">(-</span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">2</span><span class="nb">}{</span><span class="m">2</span><span class="nb">}</span><span class="o">)</span><span class="s">$</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>段内插入公式：$\exp(-\frac{x^2}{2})$</p>
+<p>段内插入公式：$\exp(-\frac{x^2}{2})$
+<!-- more --></p>
 ]]></content>
   </entry>
   
@@ -194,8 +194,7 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-zeng-jia-navibar/"/>
     <updated>2012-07-20T20:29:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-zeng-jia-navibar</id>
-    <content type="html"><![CDATA[<!-- more -->
-<p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
+    <content type="html"><![CDATA[<p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">rake new_page<span class="o">[</span>About<span class="o">]</span>
@@ -228,6 +227,7 @@
 </span><span class="line">rake generate
 </span><span class="line">rake deploy
 </span></code></pre></td></tr></table></div></figure></notextile></div>
+<!-- more -->
 ]]></content>
   </entry>
   
@@ -236,8 +236,7 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan/"/>
     <updated>2012-07-20T20:09:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan</id>
-    <content type="html"><![CDATA[<!-- more -->
-<p>首先到<a href="http://weibo.com/login.php?url=http%3A%2F%2Fweibo.com%2Ftool%2Fweiboshow">微博秀</a>获取需要嵌入的code，例如</p>
+    <content type="html"><![CDATA[<p>首先到<a href="http://weibo.com/login.php?url=http%3A%2F%2Fweibo.com%2Ftool%2Fweiboshow">微博秀</a>获取需要嵌入的code，例如</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -305,7 +304,8 @@
 </span><span class="line">weibo_skin: 10      <span class="c"># 使用哪种配色风格，数字为从1开始的微博秀风格序号</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><code>weibo_uid</code>和<code>weibo_verifier</code>从微博秀中的代码中得到</p>
+<p><code>weibo_uid</code>和<code>weibo_verifier</code>从微博秀中的代码中得到
+<!-- more --></p>
 ]]></content>
   </entry>
   
@@ -314,8 +314,8 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/17/cheng-xu-yuan-yu-lu/"/>
     <updated>2012-07-17T00:36:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/17/cheng-xu-yuan-yu-lu</id>
-    <content type="html"><![CDATA[<!-- more -->
-<p>设计者确定其设计已经达到了完美的标准不是不能再增加任何东西，而是不能再减少任何东西。—–Anotine de Saint-Exupery 法国作家兼飞机设计师</p>
+    <content type="html"><![CDATA[<p>设计者确定其设计已经达到了完美的标准不是不能再增加任何东西，而是不能再减少任何东西。—–Anotine de Saint-Exupery 法国作家兼飞机设计师
+<!-- more --></p>
 ]]></content>
   </entry>
   
@@ -324,8 +324,7 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/13/octopress-pei-zhi/"/>
     <updated>2012-07-13T00:20:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/13/octopress-pei-zhi</id>
-    <content type="html"><![CDATA[<!-- more -->
-<p>安装rvm,用rvm来安装 Ruby 1.9.2</p>
+    <content type="html"><![CDATA[<p>安装rvm,用rvm来安装 Ruby 1.9.2</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">yum install rvm
@@ -431,24 +430,24 @@
   <li>将上面两个code复制到weibo.html中即可</li>
 </ul>
 
-<script type="math/tex; mode=display">% &lt;![CDATA[
-
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( 
+<p>$$
+\begin{align<em>}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
+  &amp; (x_1, \ldots, x_n) \left( 
     \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
+      \vdots &amp; \ddots &amp; \vdots <br />
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
     \end{array} \right)
   \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
+      y_1 <br />
+      \vdots <br />
       y_n
     \end{array} \right)
-\end{align*}
- %]]&gt;</script>
+\end{align</em>}
+$$
+<!-- more --></p>
 ]]></content>
   </entry>
   

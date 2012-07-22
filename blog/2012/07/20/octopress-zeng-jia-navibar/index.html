@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="首先用rake来增加一个需要增加的页面，例如: 1
-rake new_page[About] 这是会在source/目录先生产about目录以及index.markdown，如果这样直接generate，是不会把about页面增加到navibar中的，需要在navigation. &hellip;">
+rake new_page[About] 这是会在source/目录先生产about目录以及index.markdown，如果这样直接generate，是不会把about页面增加到navibar中的，需要在navigation.html中进行设置 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -135,8 +135,7 @@ rake new_page[About] 这是会在source/目录先生产about目录以及index.ma
   </header>
 
 
-<div class="entry-content"><!-- more -->
-<p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
+<div class="entry-content"><p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class="bash"><span class="line">rake new_page<span class="o">[</span>About<span class="o">]</span>
@@ -169,6 +168,7 @@ rake new_page[About] 这是会在source/目录先生产about目录以及index.ma
 </span><span class="line">rake generate
 </span><span class="line">rake deploy
 </span></code></pre></td></tr></table></div></figure></notextile></div>
+<!-- more -->
 </div>
 
 
