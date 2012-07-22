@@ -3,7 +3,7 @@ layout: post
 title: "字符串循环移位"
 date: 2012-07-22 19:06
 comments: true
-categories: [ algorithm ]
+categories: [ algorithm, programming ]
 ---
 ## 问题描述 ##
 将一个n元一维向量向左循环移位k个位置。例如，`n=9，k=3`， 向量`abcdefghi`就变成了`defghiabc`，在考虑到节省内存的情况下，如何在`O(n)`的复杂度下对向量进行移位。
