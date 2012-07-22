@@ -3,21 +3,19 @@ layout: post
 title: "Mathjax载入过慢，每个page设定是否加载Mathjax"
 date: 2012-07-23 00:06
 comments: true
-categories:[ Octopress, linux ] 
+categories: [ Octopress, linux ] 
 ---
 前面文章中讲过如何在`octopress`中配置`latex`，但加入`latex`支持后打开网页的速度明显变慢，主要原因是国内[MathJax][]的服务器经常被墙，导致加载每个`page`的速度非常慢。
 针对上述问题，主要解决方法是每个`post`设定是否加载[MathJax][],这样就会使得博客主页以及不需要加载[MathJax][]的页面加载速度变快。下面介绍如何进行修改：
 在需要加载[MathJax][]的`post`中加入`latex: true`，如果不需要加载，就直接不用添加，如下所示
 
 ``` bash
----
 layout: post
 title: "Octopress Latex"
 date: 2012-07-20 23:49
 comments: true
 latex: true
 categories: [ octopress, linux, latex ]
----
 ```
 修改主题，`.themes/<使用的主题名>/source/_includes/head.html`,在最后面加入`{% if page.latex == true %}{% include post/latex.html %} {% endif %}`
 <!-- more -->
@@ -56,7 +54,7 @@ categories: [ octopress, linux, latex ]
 ```
 最后在`.themes/<使用的主题名>/source/_includes/post/`下面创建`latex.html`
 
-``` html .themes/<使用的主题名>/source/_includes/post/`下面创建`latex.html
+``` html .themes/<使用的主题名>/source/_includes/post/latex.html
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
