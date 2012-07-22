@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-22T19:54:12+08:00</updated>
+  <updated>2012-07-22T20:12:45+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -95,8 +95,8 @@
 <p>对向量进行循环移位其实是交换向量<code>ab</code>的两个部分，得到向量<code>ba</code>,如果<code>a</code>代表向量的前<code>k</code>个元素,分为两种情况，</p>
 
 <ul>
-  <li><code>length(a) &lt; length(b)</code>那么将b分为<code>b_l, b_r</code>, 其中<code>b_r</code>与<code>a</code>等长，那么将<code>a</code>与<code>b_r</code>进行交换，最后形成<code>b_rb_la</code>,现在只要交换<code>b_rb_l</code>的子问题。</li>
-  <li><code>length(a) &gt;= length(b)</code>那么将a分为<code>a_l, a_r</code>, 其中<code>a_l</code>与<code>b</code>等长，那么将<code>a_l</code>与<code>b</code>进行交换，最后形成<code>ba_ra_l</code>,现在只要交换<code>a_ra_l</code>的子问题。</li>
+  <li><code>length(a) &lt; length(b)</code>那么将<code>b</code>分为<code>b<sub>l</sub>b<sub>r</sub></code>, 其中<code>b<sub>r</sub></code>与<code>a</code>等长，那么将<code>a</code>与<code>b<sub>r</sub></code>进行交换，最后形成<code>b<sub>r</sub>b<sub>l</sub>a</code>,现在只要交换<code>b<sub>r</sub>b<sub>l</sub></code>的子问题。</li>
+  <li><code>length(a) &gt;= length(b)</code>那么将<code>a</code>分为<code>a<sub>l</sub>a<sub>r</sub></code>, 其中<code>a<sub>l</sub></code>与<code>b</code>等长，那么将<code>a<sub>l</sub></code>与<code>b</code>进行交换，最后形成<code>ba<sub>r</sub>a<sub>l</sub></code>,现在只要交换<code>a<sub>r</sub>a<sub>l</sub></code>的子问题。</li>
 </ul>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shift_block_swap.c block swap algorithm</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -152,7 +152,7 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="section-3">方法三 求逆算法</h2>
-<p>同方法二，将问题归结为<code>ab</code>转化为<code>ba</code>，先对<code>a</code>求逆得<code>a<sup>r</sup></code>,对<code>b</code>求逆b^r，对<code>a_rb_r</code>逆得<code>ba</code>，就是所求的结果</p>
+<p>同方法二，将问题归结为<code>ab</code>转化为<code>ba</code>，先对<code>a</code>求逆得<code>a<sup>r</sup></code>,对<code>b</code>求逆得到<code>b<sup>r</sup></code>，对<code>a<sup>r</sup></code><code>b<sup>r</sup></code>逆得<code>ba</code>，就是所求的结果</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shift_reverse.c reverse algorithm</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
