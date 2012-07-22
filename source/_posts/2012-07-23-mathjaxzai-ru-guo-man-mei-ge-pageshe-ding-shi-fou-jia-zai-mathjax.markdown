@@ -64,4 +64,5 @@ rake install["使用的主题名"]
 rake generate
 rake deploy
 ```
+
 [1]:           http://www.mathjax.org/		"MathJax"
