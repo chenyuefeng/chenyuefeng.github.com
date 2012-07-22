@@ -9,24 +9,7 @@
   <meta name="author" content="Chen Yuefeng">
 
   
-  <meta name="description" content="首先安装kramdown包 1
-gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html文件中: 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17 &hellip;">
+  <meta name="description" content="">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -154,175 +137,12 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   </header>
 
 
-  <div class="entry-content"><p>首先安装<code>kramdown</code>包</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="n">install</span> <span class="n">kramdown</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>再把下面的代码添加到<code>.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html</code>文件中:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="c">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-</span><span class="line">    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">      <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="s2">&quot;\\)&quot;</span><span class="p">]</span> <span class="p">],</span>
-</span><span class="line">      <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
-</span><span class="line">    <span class="p">}</span>
-</span><span class="line">  <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-</span><span class="line">      <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-</span><span class="line">        <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
-</span><span class="line">      <span class="p">}</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">    <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Queue</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">        <span class="kd">var</span> <span class="nx">all</span> <span class="o">=</span> <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">getAllJax</span><span class="p">(),</span> <span class="nx">i</span><span class="p">;</span>
-</span><span class="line">        <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">all</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class="line">            <span class="nx">all</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">SourceElement</span><span class="p">().</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s1">&#39; has-jax&#39;</span><span class="p">;</span>
-</span><span class="line">        <span class="p">}</span>
-</span><span class="line">    <span class="p">});</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>
-</span><span class="line">   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;</span>
-</span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>修改<code>_config.yml</code></p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">markdown</span><span class="p">:</span> <span class="n">kramdown</span>  <span class="c1">#rdiscount</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="attentation">Attentation</h2>
-<p>使用<code>kramdown</code>时，对<code>markdown</code>的语法比<code>rdiscount</code>更加严格，例如<code>```lang</code>之前必须空行
-以<code>##</code>为标题的之后不能有空行</p>
-
-<h2 id="section">右键点击页面消失</h2>
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>fix for right-click</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-</pre></td><td class="code"><pre><code class="diff"><span class="line"><span class="gh">diff --git a/sass/base/_theme.scss b/sass/base/_theme.scss</span>
-</span><span class="line"><span class="gh">index 9a50a8b..fc9dc37 100644</span>
-</span><span class="line"><span class="gd">--- a/sass/base/_theme.scss</span>
-</span><span class="line"><span class="gi">+++ b/sass/base/_theme.scss</span>
-</span><span class="line"><span class="gu">@@ -75,7 +75,7 @@ html {</span>
-</span><span class="line">   background: $page-bg image-url(&#39;line-tile.png&#39;) top left;
-</span><span class="line"> }
-</span><span class="line"> body {
-</span><span class="line"><span class="gd">-  &gt; div {</span>
-</span><span class="line"><span class="gi">+  &gt; div#main {</span>
-</span><span class="line">     background: $sidebar-bg $noise-bg;
-</span><span class="line">     border-bottom: 1px solid $page-border-bottom;
-</span><span class="line">     &gt; div {
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>样例：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-</pre></td><td class="code"><pre><code class="tex"><span class="line"><span class="sb">$$</span><span class="nb"></span>
-</span><span class="line"><span class="nv">\begin</span><span class="nb">{align</span><span class="o">*</span><span class="nb">}</span>
-</span><span class="line"><span class="nb">  &amp; </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\phi</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nv">\sum</span><span class="nb">_{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n x_ie_i, </span><span class="nv">\sum</span><span class="nb">_{j</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n y_je_j </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nb">  </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sum</span><span class="nb">_{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n </span><span class="nv">\sum</span><span class="nb">_{j</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n x_i y_j </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_i, e_j</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">  &amp; </span><span class="o">(</span><span class="nb">x_</span><span class="m">1</span><span class="nb">, </span><span class="nv">\ldots</span><span class="nb">, x_n</span><span class="o">)</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{ccc}</span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_</span><span class="m">1</span><span class="nb">, e_</span><span class="m">1</span><span class="o">)</span><span class="nb"> &amp; </span><span class="nv">\cdots</span><span class="nb"> &amp; </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_</span><span class="m">1</span><span class="nb">, e_n</span><span class="o">)</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\vdots</span><span class="nb"> &amp; </span><span class="nv">\ddots</span><span class="nb"> &amp; </span><span class="nv">\vdots</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_n, e_</span><span class="m">1</span><span class="o">)</span><span class="nb"> &amp; </span><span class="nv">\cdots</span><span class="nb"> &amp; </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_n, e_n</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nb">    </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nb">  </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{c}</span>
-</span><span class="line"><span class="nb">      y_</span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\vdots</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      y_n</span>
-</span><span class="line"><span class="nb">    </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nv">\end</span><span class="nb">{align</span><span class="o">*</span><span class="nb">}</span>
-</span><span class="line"><span class="s">$$</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>就会得到</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
- %]]></script>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="tex"><span class="line">段内插入公式：<span class="s">$</span><span class="nv">\exp</span><span class="o">(-</span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">2</span><span class="nb">}{</span><span class="m">2</span><span class="nb">}</span><span class="o">)</span><span class="s">$</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>段内插入公式：$\exp(-\frac{x^2}{2})$</p>
-</div>
+  <div class="entry-content"></div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/20/octopress-latex/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -356,41 +176,12 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   </header>
 
 
-  <div class="entry-content"><p>首先用<code>rake</code>来增加一个需要增加的页面，例如:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rake new_page<span class="o">[</span>About<span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>这是会在<code>source/</code>目录先生产<code>about</code>目录以及<code>index.markdown</code>，如果这样直接<code>generate</code>，是不会把<code>about</code>页面增加到<code>navibar</code>中的，需要在<code>navigation.html</code>中进行设置，如果直接在<code>/source/_includes/custom/navigation.html</code>中修改，那么在切换主题时，改修改是不会保存的，需要再次修改，所以最好的方法是在主题文件中修改</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">.theme/classic/source/_includes/custom/navigation.html
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>修改成</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>navigation.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;main-navigation&quot;</span><span class="nt">&gt;</span>
-</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/blog/archives&quot;</span><span class="nt">&gt;</span>Archives<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class="line">  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/about&quot;</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class="line"><span class="nt">&lt;/ul&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>然后重新安装主题，</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rake install<span class="o">[</span><span class="s1">&#39;theme name&#39;</span><span class="o">]</span>
-</span><span class="line">rake generate
-</span><span class="line">rake deploy
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-</div>
+  <div class="entry-content"></div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/20/octopress-zeng-jia-navibar/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -424,77 +215,12 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   </header>
 
 
-  <div class="entry-content"><p>首先到<a href="http://weibo.com/login.php?url=http%3A%2F%2Fweibo.com%2Ftool%2Fweiboshow">微博秀</a>获取需要嵌入的code，例如</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;iframe</span>
-</span><span class="line">	<span class="na">width=</span><span class="s">&quot;100%&quot;</span>
-</span><span class="line">	<span class="na">height=</span><span class="s">&quot;550&quot;</span>
-</span><span class="line">	<span class="na">class=</span><span class="s">&quot;share_self&quot;</span>
-</span><span class="line">	<span class="na">frameborder=</span><span class="s">&quot;0&quot;</span>
-</span><span class="line">	<span class="na">scrolling=</span><span class="s">&quot;no&quot;</span>
-</span><span class="line">	<span class="na">src=</span><span class="s">&quot;http://widget.weibo.com/weiboshow/index.php?</span>
-</span><span class="line"><span class="s">        language=&amp;width=0&amp;height=550&amp;</span>
-</span><span class="line"><span class="s">        fansRow=2&amp;ptype=1&amp;speed=0&amp;</span>
-</span><span class="line"><span class="s">        skin=1&amp;isTitle=1&amp;noborder=1&amp;</span>
-</span><span class="line"><span class="s">	isWeibo=1&amp;isFans=1&amp;uid=000000&amp;verifier=00000&amp;dpc=1&quot;</span><span class="nt">&gt;</span>
-</span><span class="line"><span class="nt">&lt;/iframe&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>其实就是各种参数，最后写成一个<code>weibo.html</code>,放到<code>.theme/&lt;所用的主题名&gt;/source/_includes/asides</code>，</p>
-
-<div><script src="https://gist.github.com/3151361.js?file=weibo.html"></script>
-<noscript><pre><code>{% if site.weibo_uid %}
-&lt;section&gt;
-  &lt;h1&gt;新浪微博&lt;/h1&gt;
-  &lt;ul id=&quot;weibo&quot;&gt;
-    &lt;li&gt;
-      &lt;iframe
-        width=&quot;100%&quot;
-        height=&quot;550&quot;
-        class=&quot;share_self&quot;
-        frameborder=&quot;0&quot;
-        scrolling=&quot;no&quot;
-        src=&quot;http://widget.weibo.com/weiboshow/index.php?width=0&amp;height=550&amp;ptype={% if site.weibo_pic %}1{% else %}0{% endif %}&amp;speed=0&amp;skin={{weibo_skin}}&amp;isTitle=0&amp;noborder=1&amp;isWeibo={% if site.weibo_show %}1{% else %}0{% endif %}&amp;isFans={{weibo_fansline}}&amp;uid={{site.weibo_uid}}&amp;verifier={{site.weibo_verifier}}&quot;&gt;
-      &lt;/iframe&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;
-{% endif %}</code></pre></noscript></div>
-
-<p>此外，还需要修改<code>_config.yml</code></p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c"># 在 default_asides中添加asides/weibo.thml</span>
-</span><span class="line">default_asides: <span class="o">[</span>asides/recent_posts.html, asides/weibo.html, asides/github.html, asides/Twitter.html, asides/googleplus.html<span class="o">]</span>
-</span><span class="line">weibo_uid: <span class="c"># 通过微博秀中获得</span>
-</span><span class="line">weibo_verifier: <span class="c">#微博秀中获得</span>
-</span><span class="line">weibo_fansline: 0   <span class="c"># 粉丝显示多少行</span>
-</span><span class="line">weibo_show: <span class="nb">true</span>    <span class="c"># 是否显示最近微博内容</span>
-</span><span class="line">weibo_pic: <span class="nb">true</span>     <span class="c"># 是否显示微博中的图片</span>
-</span><span class="line">weibo_skin: 10      <span class="c"># 使用哪种配色风格，数字为从1开始的微博秀风格序号</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><code>weibo_uid</code>和<code>weibo_verifier</code>从微博秀中的代码中得到</p>
-</div>
+  <div class="entry-content"></div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -528,9 +254,12 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   </header>
 
 
-  <div class="entry-content"><p>设计者确定其设计已经达到了完美的标准不是不能再增加任何东西，而是不能再减少任何东西。—–Anotine de Saint-Exupery 法国作家兼飞机设计师</p>
-</div>
+  <div class="entry-content"></div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/17/cheng-xu-yuan-yu-lu/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -564,172 +293,12 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   </header>
 
 
-  <div class="entry-content"><p>安装rvm,用rvm来安装 Ruby 1.9.2</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">yum install rvm
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>安装 Ruby 1.9.2</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rvm install 1.9.2 <span class="o">&amp;&amp;</span> rvm use 1.9.2
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>安装 Octopress</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone git://github.com/imathis/octopress.git octopress
-</span><span class="line"><span class="nb">cd </span>octopress
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>安装 bundler</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">gem install bundler
-</span><span class="line">bundle install
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>如果在安装 bundler 出现以下错误</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">ERROR:  Loading <span class="nb">command</span>: install <span class="o">(</span>LoadError<span class="o">)</span>
-</span><span class="line">    cannot load such file -- zlib
-</span><span class="line">ERROR:  While executing gem ... <span class="o">(</span>NameError<span class="o">)</span>
-</span><span class="line">    uninitialized constant Gem::Commands::InstallCommand
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>这是由于缺少zlib openssl 库的支持,安装zlib和openssl</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="nb">cd</span> /usr/local/rvm/src/ruby-1.9.2-p320/ext/zlib
-</span><span class="line">ruby ./extconf.rb
-</span><span class="line">make
-</span><span class="line">make install
-</span><span class="line"><span class="nb">cd</span> /usr/local/rvm/src/ruby-1.9.2-p320/ext/openssl
-</span><span class="line">ruby ./extconf.rb
-</span><span class="line">make
-</span><span class="line">make install
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>安装默认主题</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">rake install
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>部署</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line">git clone git@github.com:yourname/project.git
-</span><span class="line"><span class="nb">cd </span>project
-</span><span class="line">rake setup_github_pages
-</span><span class="line">rake generate
-</span><span class="line">rake deploy
-</span><span class="line">git add .
-</span><span class="line">git commit -am <span class="s2">&quot;   &quot;</span>
-</span><span class="line">git push git@github.com:yourname/project.git HEAD:source
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>配置comments和社交网络工具</p>
-
-<ul>
-  <li>在_config.yml中增加一项: weibo_share: true</li>
-  <li>修改source/_includes/post/sharing.html，增加</li>
-</ul>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="o">{</span>%  <span class="k">if </span>site.weibo_share %<span class="o">}</span>
-</span><span class="line">	<span class="o">{</span>% include post/weibo.html %<span class="o">}</span>
-</span><span class="line"><span class="o">{</span>% endif %<span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<ul>
-  <li>增加文件: source/_includes/post/weibo.html</li>
-  <li>访问<a href="http://www.jiathis.com/" title="Jiathis">http://www.jiathis.com/</a>，复制code</li>
-  <li>访问<a href="http://uyan.cc" title="uyan">http://uyan.cc/</a>复制code</li>
-  <li>将上面两个code复制到weibo.html中即可</li>
-</ul>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( 
-    \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
- %]]></script>
-</div>
+  <div class="entry-content"></div>
   
   
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/07/12/a-new-octopress-blog/">A New Octopress Blog</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-12T23:52:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="test-the-octpress-blog">Test the octpress blog</h2>
-
-<h3 id="test-the-octpress-blog-1">Test the octpress blog</h3>
-
-<h4 id="test-the-octpress-blog-2">Test the octpress blog</h4>
-</div>
-  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/13/octopress-pei-zhi/">Read on &rarr;</a>
+    </footer>
   
 
 
