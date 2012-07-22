@@ -4,7 +4,7 @@
   <title><![CDATA[Category: latex | 滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/blog/categories/latex/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-22T23:59:39+08:00</updated>
+  <updated>2012-07-23T00:02:22+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -18,40 +18,9 @@
     <link href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex/"/>
     <updated>2012-07-20T23:49:00+08:00</updated>
     <id>http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex</id>
-    <content type="html"><![CDATA[<p>首先安装<code>kramdown</code>包
-&lt;!–
-add latex script to index.html
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script></p>
+    <content type="html"><![CDATA[<p>首先安装<code>kramdown</code>包</p>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<p>–&gt;
-<code>ruby
+<p><code>ruby
 gem install kramdown
 </code>
 再把下面的代码添加到<code>.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html</code>文件中:</p>
