@@ -4,7 +4,7 @@
   <title><![CDATA[滴水穿石]]></title>
   <link href="http://chenyuefeng.github.com/atom.xml" rel="self"/>
   <link href="http://chenyuefeng.github.com/"/>
-  <updated>2012-07-22T20:12:45+08:00</updated>
+  <updated>2012-07-22T20:15:38+08:00</updated>
   <id>http://chenyuefeng.github.com/</id>
   <author>
     <name><![CDATA[Chen Yuefeng]]></name>
@@ -152,7 +152,7 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="section-3">方法三 求逆算法</h2>
-<p>同方法二，将问题归结为<code>ab</code>转化为<code>ba</code>，先对<code>a</code>求逆得<code>a<sup>r</sup></code>,对<code>b</code>求逆得到<code>b<sup>r</sup></code>，对<code>a<sup>r</sup></code><code>b<sup>r</sup></code>逆得<code>ba</code>，就是所求的结果</p>
+<p>同方法二，将问题归结为<code>ab</code>转化为<code>ba</code>，先对<code>a</code>求逆得<code>a<sup>r</sup></code>,对<code>b</code>求逆得到<code>b<sup>r</sup></code>，对<code>a<sup>r</sup>b<sup>r</sup></code>逆得<code>ba</code>，就是所求的结果</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shift_reverse.c reverse algorithm</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
