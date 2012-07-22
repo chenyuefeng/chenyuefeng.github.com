@@ -21,7 +21,7 @@ categories: [ octopress, linux, latex ]
 修改主题，`.themes/<使用的主题名>/source/_includes/head.html`,在最后面加入`{% if page.latex == true %}{% include post/latex.html %} {% endif %}`
 <!-- more -->
 
-{% gist 3160266   .themes/<使用的主题名>/source/_includes/head.html %}
+{% gist 3160266   head.html %}
 
 最后在`.themes/<使用的主题名>/source/_includes/post/`下面创建`latex.html`
 
