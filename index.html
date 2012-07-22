@@ -9,9 +9,8 @@
   <meta name="author" content="Chen Yuefeng">
 
   
-  <meta name="description" content="问题描述
-将一个n元一维向量向左循环移位k个位置。例如，n=9，k=3， 向量abcdefghi就变成了defghiabc，在考虑到节省内存的情况下，如何在O(n)的复杂度下对向量进行移位。 方法一
-移动c = x[0], x[0] = x[k], x[k] = x[2*k], ...依次类推， &hellip;">
+  <meta name="description" content="前面文章中讲过如何在octopress中配置latex，但加入latex支持后打开网页的速度明显变慢，主要原因是国内[MathJax][]的服务器经常被墙，导致加载每个page的速度非常慢。
+针对上述问题，主要解决方法是每个post设定是否加载[MathJax][], &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +79,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax/">Mathjax载入过慢，每个page设定是否加载Mathjax</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-23T00:06:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前面文章中讲过如何在<code>octopress</code>中配置<code>latex</code>，但加入<code>latex</code>支持后打开网页的速度明显变慢，主要原因是国内[MathJax][]的服务器经常被墙，导致加载每个<code>page</code>的速度非常慢。
+针对上述问题，主要解决方法是每个<code>post</code>设定是否加载[MathJax][],这样就会使得博客主页以及不需要加载[MathJax][]的页面加载速度变快。下面介绍如何进行修改：
+在需要加载[MathJax][]的<code>post</code>中加入<code>latex: true</code>，如果不需要加载，就直接不用添加，如下所示</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">layout: post
+</span><span class="line">title: <span class="s2">&quot;Octopress Latex&quot;</span>
+</span><span class="line">date: 2012-07-20 23:49
+</span><span class="line">comments: <span class="nb">true</span>
+</span><span class="line">latex: <span class="nb">true</span>
+</span><span class="line">categories: <span class="o">[</span> octopress, linux, latex <span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>修改主题，<code>.themes/&lt;使用的主题名&gt;/source/_includes/head.html</code>,在最后面加入&#8220;
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -707,6 +763,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax/">Mathjax载入过慢，每个page设定是否加载Mathjax</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/">字符串循环移位</a>
       </li>
     
@@ -720,10 +780,6 @@
     
       <li class="post">
         <a href="/blog/2012/07/20/octopress-xin-lang-wei-bo-ce-bian-lan/">Octopress 新浪微博侧边栏</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/17/cheng-xu-yuan-yu-lu/">程序员语录</a>
       </li>
     
   </ul>

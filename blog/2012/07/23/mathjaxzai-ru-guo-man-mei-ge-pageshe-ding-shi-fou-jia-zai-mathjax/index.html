@@ -5,28 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress Latex - 滴水穿石</title>
+  <title>Mathjax载入过慢，每个page设定是否加载Mathjax - 滴水穿石</title>
   <meta name="author" content="Chen Yuefeng">
 
   
-  <meta name="description" content="首先安装kramdown包 1
-gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html文件中: 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17 &hellip;">
+  <meta name="description" content="前面文章中讲过如何在octopress中配置latex，但加入latex支持后打开网页的速度明显变慢，主要原因是国内[MathJax][]的服务器经常被墙，导致加载每个page的速度非常慢。
+针对上述问题，主要解决方法是每个post设定是否加载[MathJax][], &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -35,7 +19,7 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chenyuefeng.github.com/blog/2012/07/20/octopress-latex/">
+  <link rel="canonical" href="http://chenyuefeng.github.com/blog/2012/07/23/mathjaxzai-ru-guo-man-mei-ge-pageshe-ding-shi-fou-jia-zai-mathjax/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -60,36 +44,7 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   </script>
 
 
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript"
-   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
- 
+  
 </head>
 
 <body   >
@@ -127,7 +82,7 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   
   <header>
     
-      <h1 class="entry-title">Octopress Latex</h1>
+      <h1 class="entry-title">Mathjax载入过慢，每个page设定是否加载Mathjax</h1>
     
     
       <p class="meta">
@@ -143,21 +98,34 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   
 
 
-<time datetime="2012-07-20T23:49:00+08:00" pubdate data-updated="true">Jul 20<span>th</span>, 2012</time>
+<time datetime="2012-07-23T00:06:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>首先安装<code>kramdown</code>包</p>
+<div class="entry-content"><p>前面文章中讲过如何在<code>octopress</code>中配置<code>latex</code>，但加入<code>latex</code>支持后打开网页的速度明显变慢，主要原因是国内[MathJax][]的服务器经常被墙，导致加载每个<code>page</code>的速度非常慢。
+针对上述问题，主要解决方法是每个<code>post</code>设定是否加载[MathJax][],这样就会使得博客主页以及不需要加载[MathJax][]的页面加载速度变快。下面介绍如何进行修改：
+在需要加载[MathJax][]的<code>post</code>中加入<code>latex: true</code>，如果不需要加载，就直接不用添加，如下所示</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">gem</span> <span class="n">install</span> <span class="n">kramdown</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">layout: post
+</span><span class="line">title: <span class="s2">&quot;Octopress Latex&quot;</span>
+</span><span class="line">date: 2012-07-20 23:49
+</span><span class="line">comments: <span class="nb">true</span>
+</span><span class="line">latex: <span class="nb">true</span>
+</span><span class="line">categories: <span class="o">[</span> octopress, linux, latex <span class="o">]</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>再把下面的代码添加到<code>.theme/&lt;使用的主题名&gt;/source/_includes/custom/head.html</code>文件中:</p>
+<p>修改主题，<code>.themes/&lt;使用的主题名&gt;/source/_includes/head.html</code>,在最后面加入&#8220;
+<!-- more --></p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>.themes/<使用的主题名>/source/_includes/head.html<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -187,10 +155,85 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
 <span class="line-number">28</span>
 <span class="line-number">29</span>
 <span class="line-number">30</span>
-<span class="line-number">31</span>
-</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="c">&lt;!-- mathjax config similar to math.stackexchange --&gt;</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span class="line"><span class="c">&lt;!--[if IEMobile 7 ]&gt;&lt;html class=&quot;no-js iem7&quot;&gt;&lt;![endif]--&gt;</span>
+</span><span class="line"><span class="c">&lt;!--[if lt IE 9]&gt;&lt;html class=&quot;no-js lte-ie8&quot;&gt;&lt;![endif]--&gt;</span>
+</span><span class="line"><span class="c">&lt;!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;</span><span class="nt">&lt;html</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!--&lt;![endif]--&gt;</span>
+</span><span class="line"><span class="nt">&lt;head&gt;</span>
+</span><span class="line">  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;title&gt;</span>Mathjax载入过慢，每个page设定是否加载Mathjax - 滴水穿石<span class="nt">&lt;/title&gt;</span>
+</span><span class="line">  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span> <span class="na">content=</span><span class="s">&quot;Chen Yuefeng&quot;</span><span class="nt">&gt;</span>
 </span><span class="line">
-</span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  
+</span><span class="line">  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  
+</span><span class="line">
+</span><span class="line">  <span class="c">&lt;!-- http://t.co/dKP3o1e --&gt;</span>
+</span><span class="line">  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;HandheldFriendly&quot;</span> <span class="na">content=</span><span class="s">&quot;True&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;MobileOptimized&quot;</span> <span class="na">content=</span><span class="s">&quot;320&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">
+</span><span class="line">  
+</span><span class="line">  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;canonical&quot;</span> <span class="na">href=</span><span class="s">&quot;http://chenyuefeng.github.comLiquid error: wrong argument type nil (expected Regexp)&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/favicon.png&quot;</span> <span class="na">rel=</span><span class="s">&quot;icon&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/stylesheets/screen.css&quot;</span> <span class="na">media=</span><span class="s">&quot;screen, projection&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/modernizr-2.0.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class="line">  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/ender.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class="line">  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/octopress.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class="line">  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;/atom.xml&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="na">title=</span><span class="s">&quot;滴水穿石&quot;</span> <span class="na">type=</span><span class="s">&quot;application/atom+xml&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+
+</span><span class="line">  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33497714-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</span><span class="line">  
+</span><span class="line"><span class="nt">&lt;/head&gt;</span>
+</span></code></pre></td></tr></table></div>
+最后在`.themes/<使用的主题名>/source/_includes/post/`下面创建`latex.html`
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>.themes/<使用的主题名>/source/_includes/post/latex.html<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-mathjax-config&quot;</span><span class="nt">&gt;</span>
 </span><span class="line">  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
 </span><span class="line">    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
 </span><span class="line">      <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span><span class="s2">&quot;\\)&quot;</span><span class="p">]</span> <span class="p">],</span>
@@ -219,105 +262,25 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
 </span><span class="line"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span>
 </span><span class="line">   <span class="na">src=</span><span class="s">&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;</span><span class="nt">&gt;</span>
 </span><span class="line"><span class="nt">&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>修改<code>_config.yml</code></p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="ruby"><span class="line"><span class="n">markdown</span><span class="p">:</span> <span class="n">kramdown</span>  <span class="c1">#rdiscount</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<h2 id="attentation">Attentation</h2>
-<p>使用<code>kramdown</code>时，对<code>markdown</code>的语法比<code>rdiscount</code>更加严格，例如<code>```lang</code>之前必须空行
-以<code>##</code>为标题的之后不能有空行</p>
-
-<h2 id="section">右键点击页面消失</h2>
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>fix for right-click</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-</pre></td><td class="code"><pre><code class="diff"><span class="line"><span class="gh">diff --git a/sass/base/_theme.scss b/sass/base/_theme.scss</span>
-</span><span class="line"><span class="gh">index 9a50a8b..fc9dc37 100644</span>
-</span><span class="line"><span class="gd">--- a/sass/base/_theme.scss</span>
-</span><span class="line"><span class="gi">+++ b/sass/base/_theme.scss</span>
-</span><span class="line"><span class="gu">@@ -75,7 +75,7 @@ html {</span>
-</span><span class="line">   background: $page-bg image-url(&#39;line-tile.png&#39;) top left;
-</span><span class="line"> }
-</span><span class="line"> body {
-</span><span class="line"><span class="gd">-  &gt; div {</span>
-</span><span class="line"><span class="gi">+  &gt; div#main {</span>
-</span><span class="line">     background: $sidebar-bg $noise-bg;
-</span><span class="line">     border-bottom: 1px solid $page-border-bottom;
-</span><span class="line">     &gt; div {
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>样例：</p>
+</span></code></pre></td></tr></table></div>
+至此修改完成，只要重新安装主题，重新部署
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-</pre></td><td class="code"><pre><code class="tex"><span class="line"><span class="sb">$$</span><span class="nb"></span>
-</span><span class="line"><span class="nv">\begin</span><span class="nb">{align</span><span class="o">*</span><span class="nb">}</span>
-</span><span class="line"><span class="nb">  &amp; </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">x,y</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\phi</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nv">\sum</span><span class="nb">_{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n x_ie_i, </span><span class="nv">\sum</span><span class="nb">_{j</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n y_je_j </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nb">  </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sum</span><span class="nb">_{i</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n </span><span class="nv">\sum</span><span class="nb">_{j</span><span class="o">=</span><span class="m">1</span><span class="nb">}^n x_i y_j </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_i, e_j</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">  &amp; </span><span class="o">(</span><span class="nb">x_</span><span class="m">1</span><span class="nb">, </span><span class="nv">\ldots</span><span class="nb">, x_n</span><span class="o">)</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{ccc}</span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_</span><span class="m">1</span><span class="nb">, e_</span><span class="m">1</span><span class="o">)</span><span class="nb"> &amp; </span><span class="nv">\cdots</span><span class="nb"> &amp; </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_</span><span class="m">1</span><span class="nb">, e_n</span><span class="o">)</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\vdots</span><span class="nb"> &amp; </span><span class="nv">\ddots</span><span class="nb"> &amp; </span><span class="nv">\vdots</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_n, e_</span><span class="m">1</span><span class="o">)</span><span class="nb"> &amp; </span><span class="nv">\cdots</span><span class="nb"> &amp; </span><span class="nv">\phi</span><span class="o">(</span><span class="nb">e_n, e_n</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nb">    </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nb">  </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{c}</span>
-</span><span class="line"><span class="nb">      y_</span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      </span><span class="nv">\vdots</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-</span><span class="line"><span class="nb">      y_n</span>
-</span><span class="line"><span class="nb">    </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
-</span><span class="line"><span class="nv">\end</span><span class="nb">{align</span><span class="o">*</span><span class="nb">}</span>
-</span><span class="line"><span class="s">$$</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line">rake install<span class="o">[</span><span class="s2">&quot;使用的主题名&quot;</span><span class="o">]</span>
+</span><span class="line">rake generate
+</span><span class="line">rake deploy
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>就会得到</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
 
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
- %]]></script>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="tex"><span class="line">段内插入公式：<span class="s">$</span><span class="nv">\exp</span><span class="o">(-</span><span class="nv">\frac</span><span class="nb">{x^</span><span class="m">2</span><span class="nb">}{</span><span class="m">2</span><span class="nb">}</span><span class="o">)</span><span class="s">$</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>段内插入公式：$\exp(-\frac{x^2}{2})$
-<!-- more --></p>
+
+
+[MathJax]:http://www.mathjax.org/		&#8220;MathJax&#8221;
+
+Included file &#8216;links&#8217; not found in _includes directory
+</使用的主题名></span></figcaption></figure></notextile></div></使用的主题名></使用的主题名></span></figcaption></figure></notextile></div>
 </div>
 
 
@@ -340,12 +303,12 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
   
 
 
-<time datetime="2012-07-20T23:49:00+08:00" pubdate data-updated="true">Jul 20<span>th</span>, 2012</time>
+<time datetime="2012-07-23T00:06:00+08:00" pubdate data-updated="true">Jul 23<span>rd</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/latex/'>latex</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
   
 </span>
 
@@ -383,10 +346,8 @@ gem install kramdown 再把下面的代码添加到.theme/&lt;使用的主题名
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/07/20/octopress-zeng-jia-navibar/" title="Previous Post: Octopress 增加Navibar">&laquo; Octopress 增加Navibar</a>
+        <a class="basic-alignment left" href="/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/" title="Previous Post: 字符串循环移位">&laquo; 字符串循环移位</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/07/22/zi-fu-chuan-xun-huan-yi-wei/" title="Next Post: 字符串循环移位">字符串循环移位 &raquo;</a>
       
     </p>
   </footer>
