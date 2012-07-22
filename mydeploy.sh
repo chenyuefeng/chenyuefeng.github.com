@@ -7,9 +7,7 @@ spawn /usr/local/rvm/gems/ruby-1.9.2-p320/bin/rake deploy
 expect "Enter passphrase for key"
 send "$mykeyphrase\n" 
 
-spawn git add .
-spawn git commit -am "$gitmessage"
-spawn git push git@github.com:chenyuefeng/chenyuefeng.github.com.git HEAD:source
+spawn /usr/bin/git push git@github.com:chenyuefeng/chenyuefeng.github.com.git HEAD:source
 expect "Enter passphrase for key"
 send "$mykeyphrase\n"
 interact 
